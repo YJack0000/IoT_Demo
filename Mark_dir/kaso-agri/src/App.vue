@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-  <fullscreen ref="fullscreen" @change="fullscreenChange">
+  <!--<fullscreen ref="fullscreen" @change="fullscreenChange">-->
     <router-view/>
-  </fullscreen>
-  <button type="button" @click="toggle" >Fullscreen</button>
+  <!--</fullscreen>-->
+  <!--<button type="button" @click="toggle" >Fullscreen</button>-->
   </div>
 </template>
 

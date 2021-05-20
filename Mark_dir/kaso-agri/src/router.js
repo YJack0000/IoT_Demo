@@ -6,6 +6,7 @@ import LoginComponent from './components/Login.vue'
 import ForgetPasswordComponent from './components/ForgetPassword.vue'
 import ChangePasswordComponent from './components/ChangePassword.vue'
 import Mark from './views/Mark.vue'
+import MarkHome from './views/MarkHome.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -32,6 +33,11 @@ export default new Router({
       path: '/mark',
       name: 'mark',
       component: Mark,
+    },
+    {
+      path: '/markHome',
+      name: 'markHome',
+      component: MarkHome,
     }
   ]
 })
