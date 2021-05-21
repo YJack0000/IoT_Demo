@@ -1,9 +1,17 @@
  <template> 
   <el-container style="height: 100%; border: 1px solid #eee">
     <!-- left side menu for different pages-->
-    <el-aside width="20%px" style="background-color: rgb(238, 241, 246)  height: 100%">
-      <el-container style="height: 100%; border : 1px">
-        <el-menu  @select="handleSelect">
+    <el-aside width="15%" style="background-color: rgb(238, 241, 246) ">
+      <el-container style="height: 100%; border : 1px ">
+        <el-menu  @select="handleSelect" style="width: 100%">
+          <nav id="app" style = "padding: 12px" >
+            <a href="/" >
+              <div style="width: 100%">  
+                <img src="../assets/img/logo.png" 
+                width="59px" height="33px">
+              </div>
+            </a>
+          </nav>
           <el-submenu index="1">
             <template slot="title"><i class="el-icon-document"></i>Navigator One</template>
             <el-menu-item-group title="Group 1">
@@ -70,22 +78,16 @@
           </el-table-column>
         </el-table>
         
-        <el-row v-show="pages === 'dashboard'" >
+        <el-row>
           <el-col :span="24" class="content">
             <el-col :xs="23" :sm="23" :md="23" :lg="23" :xl="23" :span="23" class="left-message">
               <!-- Dashboard画面 -->
-              <Dashboard></Dashboard>
+              <Dashboard v-show="pages === 'dashboard'"></Dashboard>
+              <DeviceStatus v-show="pages === 'deviceStatus'"></DeviceStatus>
             </el-col>
           </el-col>
         </el-row>
-        <el-row v-show="pages === 'deviceStatus'">
-          <el-col :span="24" class="content">
-            <el-col :xs="23" :sm="23" :md="23" :lg="23" :xl="23" :span="23" class="left-message">
-              <!-- 設備狀態画面 -->
-              <DeviceStatus></DeviceStatus>
-            </el-col>
-          </el-col>
-        </el-row>
+        
         
       </el-main>
       

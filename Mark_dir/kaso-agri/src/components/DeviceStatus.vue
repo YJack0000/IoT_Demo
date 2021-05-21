@@ -946,7 +946,35 @@ export default {
       margin: 14px 0 0;
       padding: 2px 30px;
       background-color: transparent;
+      
     }
   }
 }
+.bg-on {
+    color: #fff;
+    background-image: linear-gradient(-180deg, #29cb97 0%, #01be7f 100%);
+    box-shadow: 0 5px 20px 0 #c0c7d6;
+    .schedule-lines {
+      border-right: 1px solid #27cb96;
+    }
+    .switch-button {
+      cursor: pointer;
+      color: #fff;
+      opacity: 0.8;
+      border: 1px solid #ffffff;
+    }
+  }
+  .bg-off {
+    color: rgba(0, 0, 0, 0.65);
+    background: #e7e9f0;
+    .schedule-lines {
+      border-right: 1px solid rgba(0, 0, 0, 0.15);
+    }
+    .switch-button {
+      cursor: pointer;
+      color: #009966;
+      opacity: 0.8;
+      border: 1px solid #00cc99;
+    }
+  }
 </style>
