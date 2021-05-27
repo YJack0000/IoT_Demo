@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
-import LoginLayout from './views/LoginLayout.vue'
-import LoginComponent from './components/Login.vue'
-import ForgetPasswordComponent from './components/ForgetPassword.vue'
-import ChangePasswordComponent from './components/ChangePassword.vue'
+//import Home from './views/Home.vue'
+//import LoginLayout from './views/LoginLayout.vue'
+//import LoginComponent from './components/Login.vue'
+//import ForgetPasswordComponent from './components/ForgetPassword.vue'
+//import ChangePasswordComponent from './components/ChangePassword.vue'
 import Mark from './views/Mark.vue'
 import MarkHome from './views/MarkHome.vue'
 Vue.use(Router)
@@ -14,7 +14,7 @@ export default new Router({
   //mode: 'hash',
   base: process.env.BASE_URL,
   routes: [
-    {
+    /*{
       path: '/',
       name: '',
       component: LoginLayout,
@@ -28,7 +28,7 @@ export default new Router({
       path: '/home',
       name: 'home',
       component: Home,
-    },
+    },*/
     {
       path: '/mark',
       name: 'mark',
