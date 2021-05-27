@@ -2,27 +2,7 @@
   <el-container style="height: 100%; border: 1px solid #eee">
     <!-- left side menu for different pages-->
     <el-aside width="15%" style="background-color: rgb(238, 241, 246) ">
-      <el-container style="height: 100%; border : 1px ">
-        <el-menu  @select="handleSelect" style="width: 100%">
-          <nav id="app" style = "padding: 12px" >
-            <a href="/" >
-              <div style="width: 100%">  
-                <img src="../assets/img/logo.png" 
-                width="59px" height="33px">
-              </div>
-            </a>
-          </nav>
-          <el-submenu index="1">
-            <template slot="title"><i class="el-icon-document"></i>Navigator One</template>
-            <el-menu-item-group title="Group 1">
-              <el-menu-item index="table">table</el-menu-item>
-              <el-menu-item index="dashboard">dashboard</el-menu-item>
-            </el-menu-item-group>
-          </el-submenu>
-          <el-menu-item index="deviceStatus">Device Status</el-menu-item>
-          <el-menu-item index="3" class="el-icon-notebook-1">Option5</el-menu-item>       
-        </el-menu>
-      </el-container>       
+      <router-view name="aside"/>
     </el-aside>
     <!--header containing different tag and main-->
     <el-container style = "height: 100%">
@@ -69,21 +49,12 @@
       </el-header>
       <!--main pages-->
       <el-main>
-        <el-table :data="tableData" v-show="pages === 'table'" >
-          <el-table-column prop="date" label="Date" width="140">
-          </el-table-column>
-          <el-table-column prop="name" label="Name" width="120">
-          </el-table-column>
-          <el-table-column prop="address" label="Address">
-          </el-table-column>
-        </el-table>
         
         <el-row>
           <el-col :span="24" class="content">
             <el-col :xs="23" :sm="23" :md="23" :lg="23" :xl="23" :span="23" class="left-message">
               <!-- Dashboard画面 -->
-              <Dashboard v-show="pages === 'dashboard'"></Dashboard>
-              <DeviceStatus v-show="pages === 'deviceStatus'"></DeviceStatus>
+              <router-view/>
             </el-col>
           </el-col>
         </el-row>
@@ -102,33 +73,17 @@
 
 
 <script>
-  import Dashboard from '../components/Dashboard.vue'
-  import DeviceStatus from '../components/DeviceStatus.vue'
+
   export default {
     name : 'markHome',
     data() {
-      const item = {
-        date: '2016-05-02',
-        name: 'Tom',
-        address: 'No. 189, Grove St, Los Angeles'
-      }
       return {
-        tableData: Array(10).fill(item),
-        pages: 'table',
       }
     },
     components: {
-      Dashboard,
-      DeviceStatus
-
+  
     },
-    methods: {
-      handleSelect(key) {
-        console.log(key)
-        this.pages = key
-        console.log(this.pages === '1-1')
-      },
-    }
+    
   }
 </script>
 
