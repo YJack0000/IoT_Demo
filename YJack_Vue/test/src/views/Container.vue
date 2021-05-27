@@ -4,25 +4,7 @@
     </el-header>
     <el-container>
         <el-aside width="20%" style="min-width: 150px; max-width: 250px;">
-            <el-menu
-            :router="true"
-            default-active="1"
-            class="el-menu-vertical-demo"
-            @open="handleOpen"
-            @close="handleClose">
-            <el-menu-item index="/">
-                <i class="el-icon-menu"></i>
-                <template #title>主頁</template>
-            </el-menu-item>
-            <el-menu-item index="/modbus">
-                <i class="el-icon-menu"></i>
-                <template #title>Modbus測試</template>
-            </el-menu-item>
-            <el-menu-item index="3" disabled>
-                <i class="el-icon-document"></i>
-                <template #title>開發中</template>
-            </el-menu-item>
-            </el-menu>
+            <Menu/>
         </el-aside>
         <el-container>
           <!--<el-header style="background-color: white">-->
@@ -47,11 +29,13 @@
 <script>
 //import Home from '../components/Home.vue'
 //import ModbusTest from '../components/ModbusTest.vue'
+import Menu from '@/components/Menu.vue'
 
   export default {
     components:{
       //Home,
       //ModbusTest
+      Menu
     },data() {
       return {
         tags: [
