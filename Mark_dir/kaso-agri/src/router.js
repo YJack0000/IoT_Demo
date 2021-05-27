@@ -38,6 +38,29 @@ export default new Router({
       path: '/markHome',
       name: 'markHome',
       component: MarkHome,
-    }
+      children:[
+       
+        {
+          path: 'Dashboard',  
+          //name:'main', 
+          components: {
+            default: Dashboard,
+            aside: AsideMenu 
+          }
+        },
+        {
+          path: 'deviceStatus',
+          components: {
+            default: DeviceStatus,
+            aside: AsideMenu2
+          }
+        },
+        {
+          path: '',
+          redirect: 'Dashboard'
+        }
+      ]
+    },
+   
   ]
 })
